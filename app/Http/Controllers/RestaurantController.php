@@ -22,12 +22,16 @@ class RestaurantController extends Controller
 
     public function store(Request $request)
     {
+
+        $file = $request->file('image_file');
+		$file->move('uploads', $file->getClientOriginalName()); 
+        $name = $file->getClientOriginalName();
         $restaurant = new Restaurant([
             'name' => $request->get('name'),
             'hotline' => $request->get('hotline'),
             'cuisine' => $request->get('cuisine'),
             'address' => $request->get('address'),
-            'imageUrl' => $request->file('select_file')
+            'imageUrl' => $name
           ]);
   
         $restaurant->save();
@@ -48,17 +52,30 @@ class RestaurantController extends Controller
     }
 
 
-    // public function order($id){
-    //     $restaurant = Restaurant::find($id);
-    //     $items = $restaurant->menuItems;   
-    //     return view('restaurants.order')->with('restaurant', $restaurant)->with('items', $items);
-    // }
+    public function edit($id){
+        $restaurant = Restaurant::find($id);
+        return view('restaurants.edit')->with('restaurant', $restaurant)->with('id', $id);
+    }
 
 
-    // public function addItem($id){
-    //     // $restaurant = Restaurant::find($id);
-    //     // return view('restaurants.addItem',$restaurant);
-    //     return view('menuItems.addItem')->with('restaurant',$restaurant);
-    // }
+    public function update(Request $request,$id){
+
+        if($request->file('image_file')){
+            $file = $request->file('image_file');
+            $file->move('uploads', $file->getClientOriginalName()); 
+            $name = $file->getClientOriginalName();
+        }
+        $restaurant = Restaurant::find($id);
+        // return view('restaurants.addItem',$restaurant);
+        $restaurant->name = $request->get('name');
+        $restaurant->hotline = $request->get('hotline');
+        $restaurant->cuisine = $request->get('cuisine');
+        if($request->file('image_file')){
+            $restaurant->imageUrl = $name;
+        }
+        $restaurant->save();
+        
+        return redirect('/restaurant/index');
+    }
 
 }

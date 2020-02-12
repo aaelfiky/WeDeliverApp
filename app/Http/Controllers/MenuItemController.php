@@ -22,6 +22,7 @@ class MenuItemController extends Controller
             'name' => $request->get('name'),
             'restaurant_id' => $request->get('restaurant_id'),
             'price' => $request->get('price'),
+            'description' => $request->get('description'),
             'category' => $request->get('category')
           ]);
   

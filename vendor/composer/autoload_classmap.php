@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddDescriptionToMenuItems' => $baseDir . '/database/migrations/2020_02_11_234753_add_description_to_menu_items.php',
+    'AddRatingToMenuItems' => $baseDir . '/database/migrations/2020_02_11_224142_add_rating_to_menu_items.php',
+    'App\\Cart' => $baseDir . '/app/Cart.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -48,7 +51,7 @@ return array(
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
     'CreateCartTable' => $baseDir . '/database/migrations/2020_02_07_232626_create_cart_table.php',
-    'CreateMenuItemsTable' => $baseDir . '/database/migrations/2020_02_07_141755_create_menuItems_table.php',
+    'CreateMenuItemsTable' => $baseDir . '/database/seeds/2020_02_10_224142.php',
     'CreateOrderItemsTable' => $baseDir . '/database/migrations/2020_02_07_222033_create_order_items_table.php',
     'CreateOrderTable' => $baseDir . '/database/migrations/2020_02_07_222737_create_order_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',

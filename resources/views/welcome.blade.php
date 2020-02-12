@@ -8,6 +8,8 @@
         <title>WeDeliver</title>
 
         <!-- Fonts -->
+        <link rel="stylesheet" href="{{ url('/css/font-awesome/css/font-awesome.min.css') }}">
+
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
