@@ -33,8 +33,11 @@
         <td>{{$order['created_at']}}</td>
 
         @if (Auth::user()->id == 1)
-          <td><a class="btn btn-success" href="{{action('OrderController@done',$order['id'])}}">
+          <td>
+              <a class="btn btn-success" href="{{action('OrderController@done',$order['id'])}}">
                 <i class="fa fa-check-circle"></i> Ready</a>
+              <a class="btn btn-warning" href="{{action('OrderController@show',$order['id'])}}">
+                <i class="fa fa-list"></i> Order Details</a>
           </td>
         @endif
         

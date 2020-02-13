@@ -59,8 +59,16 @@ class OrderController extends Controller
 
     public function done($order_id){
         $order = Order::find($order_id);
+        DB::table('order_items')->where('order_id', $order_id)->delete();
         $order->delete();
         return redirect()->back();redirect(Request::url());
+
+    }
+
+    public function show($order_id){
+        $order = Order::find($order_id);
+        $items = $order->orderItems;
+        return view('orders.show')->with('items', $items);
 
     }
 }

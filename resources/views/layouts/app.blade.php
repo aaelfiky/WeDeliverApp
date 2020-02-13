@@ -52,9 +52,17 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             @if( Auth::user()->id ==1)
-                                <li><a href="{{ url('/order/index') }}">All Orders</a></li>
+                                <li>
+                                    <a href="{{ url('/order/index') }}">All Orders 
+                                    <span class="badge badge-success">{{ \DB::table('orders')->count()}}</span>
+                                    </a>
+                                </li>
                             @else
-                                <li><a href="{{ url('/order/index') }}">My Orders</a></li>
+                                <li><a href="{{ url('/order/index') }}">
+                                    My Orders
+                                    <span class="badge badge-success">{{ Auth::user()->orders->count()}}</span>
+                                    </a>
+                                </li>
                             @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

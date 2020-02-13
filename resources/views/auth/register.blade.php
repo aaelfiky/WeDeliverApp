@@ -61,6 +61,15 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group">
+                            <label for="address" class="col-md-4 control-label">Address:</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control" name="address" required>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

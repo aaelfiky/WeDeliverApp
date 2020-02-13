@@ -39,6 +39,7 @@ Route::get('/cart/remove/{id}', 'CartController@remove');
 
 
 Route::get('/order/index','OrderController@index')->name('order.index');
+Route::get('/order/show/{id}','OrderController@show')->name('order.show');
 Route::get('/order/done/{id}', 'OrderController@done');
 Route::get('/order/place/{r_id}','OrderController@place')->name('order.place');
 
